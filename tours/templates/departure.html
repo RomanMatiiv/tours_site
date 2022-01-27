@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load filters %}
+
+{% block main %}
+
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ cur_departure|get_departure:departures }}</h1>
+    <p class="mb-4">Найдено {{ departure_tours|length }} {{ departure_tours|length|rupluralize:"тур,тура,туров" }}, от {{ min_price|readable_price }} до {{ max_price|readable_price }} и от {{ min_nights }} {{ min_nights|rupluralize:"ночи,ночи,ночей" }} до {{ max_nights }} {{ max_nights|rupluralize:"ночи,ночей,ночей" }}</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+        {% for tour_id, tour_data in departure_tours.items %}
+            <div class="col-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-top embed-responsive-item" src="{{ tour_data.picture }}" alt="" />
+                </div>
+                <div class="card-body">
+                    <h2 class="h5 card-title">{{ tour_data.title }}</h2>
+                    <p class="card-text">{{ tour_data.description|truncatechars:100 }}</p>
+                    <a href="/tour/{{ tour_id }}" class="btn btn-sm btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  </main>
+
+{% endblock %}
