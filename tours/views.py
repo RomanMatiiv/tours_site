@@ -1,10 +1,10 @@
 import random
 
-from django.shortcuts import render
 from django.http import HttpResponseBadRequest
-from django.http import HttpResponseNotFound
 from django.http import HttpResponseForbidden
+from django.http import HttpResponseNotFound
 from django.http import HttpResponseServerError
+from django.shortcuts import render
 
 import tours.data as mock_data
 

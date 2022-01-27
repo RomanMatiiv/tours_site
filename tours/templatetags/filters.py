@@ -1,6 +1,8 @@
+from typing import Dict
+
 from django import template
 from django.template.defaultfilters import stringfilter
-from typing import Dict
+
 register = template.Library()
 
 
