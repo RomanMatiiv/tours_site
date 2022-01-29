@@ -1,1 +1,1 @@
-# stepik_tours
+# tours_site
