@@ -63,7 +63,11 @@ def tour_view(request, id: int):
     context['title'] = mock_data.title
     context['departures'] = mock_data.departures
 
-    current_tour = mock_data.tours[id]
+    try:
+        current_tour = mock_data.tours[id]
+    except KeyError:
+        raise Http404
+
     context['tour'] = current_tour
 
     return render(request, 'tour.html', context)
