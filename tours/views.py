@@ -22,7 +22,7 @@ def main_view(request):
     random_tours = random.sample(tours_id, get_sample)
     context['random_tours'] = {i: mock_data.tours[i] for i in random_tours}
 
-    return render(request, 'index.html', context)
+    return render(request, 'tours/index.html', context)
 
 
 def departure_view(request, departure: str):
@@ -50,7 +50,7 @@ def departure_view(request, departure: str):
     context['min_nights'] = min(_tours_filtered_nights)
     context['max_nights'] = max(_tours_filtered_nights)
 
-    return render(request, 'departure.html', context)
+    return render(request, 'tours/departure.html', context)
 
 
 def tour_view(request, id: int):
@@ -67,4 +67,4 @@ def tour_view(request, id: int):
 
     context['tour'] = current_tour
 
-    return render(request, 'tour.html', context)
+    return render(request, 'tours/tour.html', context)
