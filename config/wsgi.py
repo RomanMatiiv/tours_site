@@ -1,5 +1,5 @@
 """
-WSGI config for tours_site project.
+WSGI tours_site for tours_site project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
