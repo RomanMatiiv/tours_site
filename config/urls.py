@@ -25,9 +25,9 @@ from config.error_handlers import custom_handler500
 
 
 urlpatterns = [
-    path('', main_view),
-    path('departure/<str:departure>/', departure_view),
-    path('tour/<int:id>/', tour_view),
+    path('', main_view, name='main'),
+    path('departure/<str:departure>/', departure_view, name='departure'),
+    path('tour/<int:id>/', tour_view, name='tour'),
 ]
 
 handler400 = custom_handler400
